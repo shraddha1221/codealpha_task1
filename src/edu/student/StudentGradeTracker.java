@@ -8,7 +8,6 @@ public class StudentGradeTracker {
 	    private int numSubjects;
 	    private Scanner scanner;
 
-	    // Constructor to initialize the array and Scanner
 	    public StudentGradeTracker(int numStudents, int numSubjects) {
 	        this.numStudents = numStudents;
 	        this.numSubjects = numSubjects;
@@ -16,7 +15,6 @@ public class StudentGradeTracker {
 	        this.scanner = new Scanner(System.in);
 	    }
 
-	    // Method to input student data and grades
 	    public void inputStudentData() {
 	        for (int i = 0; i < numStudents; i++) {
 	            System.out.println("\nEnter details for student " + (i + 1) + ":");
@@ -37,7 +35,6 @@ public class StudentGradeTracker {
 	        }
 	    }
 
-	    // Method to calculate the average grade for a student
 	    public double calculateAverage(Student student) {
 	        int[] grades = student.getGrades();
 	        if (grades.length == 0) {
@@ -50,7 +47,6 @@ public class StudentGradeTracker {
 	        return (double) sum / grades.length;
 	    }
 
-	    // Method to find the highest grade for a student
 	    public int findHighestGrade(Student student) {
 	        int[] grades = student.getGrades();
 	        if (grades.length == 0) {
@@ -65,7 +61,6 @@ public class StudentGradeTracker {
 	        return highest;
 	    }
 
-	    // Method to find the lowest grade for a student
 	    public int findLowestGrade(Student student) {
 	        int[] grades = student.getGrades();
 	        if (grades.length == 0) {
@@ -78,9 +73,7 @@ public class StudentGradeTracker {
 	            }
 	        }
 	        return lowest;
-	    }
-
-	    // Method to display all student data
+	    
 	    public void displayStudentData() {
 	        for (int i = 0; i < numStudents; i++) {
 	            Student student = students[i];
@@ -95,7 +88,6 @@ public class StudentGradeTracker {
 	        }
 	    }
 
-	    // Main method to test the StudentGradeTracker class
 	    public static void main(String[] args) {
 	        Scanner input = new Scanner(System.in);
 
@@ -111,7 +103,6 @@ public class StudentGradeTracker {
 	        tracker.inputStudentData();
 	        tracker.displayStudentData();
 
-	        // Calculate and display average, highest and lowest grades for each student
 	        for (int i = 0; i < numStudents; i++) {
 	            Student student = tracker.students[i];
 	            double average = tracker.calculateAverage(student);
